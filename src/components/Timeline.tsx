@@ -20,10 +20,42 @@ export function Timeline({ brand }: TimelineProps) {
     return values
   }, [brand.timelineEnd, brand.timelineStart])
 
+  // Calculer les positions des ticks avec espacement régulier et sans chevauchement
+  const tickPositions = useMemo(() => {
+    const positions: Array<{ year: number; left: string }> = []
+    const totalTicks = ticks.length
+    
+    if (totalTicks === 0) return positions
+    
+    // Calculer l'espacement régulier en pourcentage
+    // On réserve environ 3% à droite pour la flèche
+    const availableWidth = 97
+    const spacing = totalTicks > 1 ? availableWidth / (totalTicks - 1) : 0
+    
+    ticks.forEach((tick, index) => {
+      let left: string
+      if (index === totalTicks - 1) {
+        // Dernier tick : avant la flèche (environ 97% de la largeur)
+        left = `${availableWidth}%`
+      } else {
+        // Ticks régulièrement espacés
+        left = `${index * spacing}%`
+      }
+      positions.push({ year: tick, left })
+    })
+    
+    return positions
+  }, [ticks])
+
   const getPosition = (year: number) => {
     const range = brand.timelineEnd - brand.timelineStart
     const ratio = (year - brand.timelineStart) / range
-    return `${ratio * 100}%`
+    // Décaler les modèles récents (i8 et M4 CSL) plus à gauche
+    let adjustedRatio = ratio
+    if (year >= 2014) {
+      adjustedRatio = ratio * 0.85 // Décaler de 15% vers la gauche
+    }
+    return `${adjustedRatio * 100}%`
   }
 
   // Calculer les positions avec décalage vertical pour éviter les chevauchements
@@ -62,10 +94,10 @@ export function Timeline({ brand }: TimelineProps) {
   return (
     <section className="timeline-shell">
       <div className="timeline-axis">
-        {ticks.map((tick) => (
-          <div key={tick} className="timeline-tick" style={{ left: getPosition(tick) }}>
+        {tickPositions.map(({ year, left }) => (
+          <div key={year} className="timeline-tick" style={{ left }}>
             <span className="tick-mark" />
-            <span className="tick-label">{tick}</span>
+            <span className="tick-label">{year}</span>
           </div>
         ))}
         <span className="timeline-arrow" aria-hidden="true" />

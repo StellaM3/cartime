@@ -369,6 +369,8 @@
   position: absolute;
   top: -0.5rem;
   text-align: center;
+  transform: translateX(-50%);
+  min-width: 40px;
 }
 
 .tick-mark {
@@ -386,7 +388,7 @@
 
 .timeline-arrow {
   position: absolute;
-  right: -10px;
+  right: 0;
   top: 50%;
   transform: translateY(-50%);
   width: 0;
