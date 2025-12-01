@@ -62,9 +62,11 @@ export const brands: Brand[] = [
         name: 'BMW M1',
         year: 1978,
         heroImage:
-          'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/BMW_M1_%28E26%29_%E2%80%93_Frontansicht%2C_1._Juli_2012%2C_D%C3%BCsseldorf.jpg/1280px-BMW_M1_%28E26%29_%E2%80%93_Frontansicht%2C_1._Juli_2012%2C_D%C3%BCsseldorf.jpg',
+          'https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/BMW-M1-BMW-Museum.jpg/1200px-BMW-M1-BMW-Museum.jpg',
         gallery: [
-          'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/BMW_M1_%28E26%29_%E2%80%93_Frontansicht%2C_1._Juli_2012%2C_D%C3%BCsseldorf.jpg/1280px-BMW_M1_%28E26%29_%E2%80%93_Frontansicht%2C_1._Juli_2012%2C_D%C3%BCsseldorf.jpg',
+          'https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/BMW-M1-BMW-Museum.jpg/1200px-BMW-M1-BMW-Museum.jpg',
+          'https://4h10.com/wp-content/uploads/2024/01/1-3.jpg',
+          'https://bmw-m1-club.com/wp-content/uploads/2021/02/bmw-m1-club-deutschland-ev-03-06_0007.jpg',
         ],
         technical:
           '3.5L inline-six M88 engine, 277 hp, 5-speed manual gearbox, mid-engine layout.',
@@ -80,9 +82,11 @@ export const brands: Brand[] = [
         name: 'BMW M3 E30',
         year: 1986,
         heroImage:
-          'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/BMW_M3_E30_%28E30%29_%E2%80%93_Frontansicht%2C_1._Juli_2012%2C_D%C3%BCsseldorf.jpg/1280px-BMW_M3_E30_%28E30%29_%E2%80%93_Frontansicht%2C_1._Juli_2012%2C_D%C3%BCsseldorf.jpg',
+          'https://cdn.motor1.com/images/mgl/G3yeBV/s1/bmw-m3-e30-statica.webp',
         gallery: [
-          'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/BMW_M3_E30_%28E30%29_%E2%80%93_Frontansicht%2C_1._Juli_2012%2C_D%C3%BCsseldorf.jpg/1280px-BMW_M3_E30_%28E30%29_%E2%80%93_Frontansicht%2C_1._Juli_2012%2C_D%C3%BCsseldorf.jpg',
+          'https://cdn.motor1.com/images/mgl/G3yeBV/s1/bmw-m3-e30-statica.webp',
+          'https://am-s3-bucket-assets.s3.eu-west-2.amazonaws.com/silverstone/prod/lot_images/large/rec12552-1/rec12552-1_5.jpg.webp?dummy=1764308159',
+          'https://images.squarespace-cdn.com/content/v1/6598c8e83ff0af0197ff19f9/547c6b4f-8296-47c1-947b-a1975cd36017/e30+m3.jpg',
         ],
         technical:
           'Naturally aspirated 2.3L S14, 200 hp, 5-speed manual gearbox, widened bodywork.',
@@ -98,9 +102,11 @@ export const brands: Brand[] = [
         name: 'BMW M5 E28',
         year: 1985,
         heroImage:
-          'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/BMW_M5_E28_%28E28%29_%E2%80%93_Frontansicht%2C_1._Juli_2012%2C_D%C3%BCsseldorf.jpg/1280px-BMW_M5_E28_%28E28%29_%E2%80%93_Frontansicht%2C_1._Juli_2012%2C_D%C3%BCsseldorf.jpg',
+          'https://maessencsc.com/wp-content/uploads/2024/08/bmw-m5-e28-1986.jpg',
         gallery: [
-          'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/BMW_M5_E28_%28E28%29_%E2%80%93_Frontansicht%2C_1._Juli_2012%2C_D%C3%BCsseldorf.jpg/1280px-BMW_M5_E28_%28E28%29_%E2%80%93_Frontansicht%2C_1._Juli_2012%2C_D%C3%BCsseldorf.jpg',
+          'https://maessencsc.com/wp-content/uploads/2024/08/bmw-m5-e28-1986.jpg',
+          'https://am-s3-bucket-assets.s3.eu-west-2.amazonaws.com/silverstone/prod/lot_images/xlarge/REC13308-1/REC13308-1_1.jpg.webp',
+          'https://cdn.dealeraccelerate.com/studio/1/51/5340/x/1988-bmw-m5',
         ],
         technical:
           '3.5L inline-six M88/3 engine, 286 hp, 5-speed manual gearbox, rear-wheel drive.',
@@ -116,9 +122,11 @@ export const brands: Brand[] = [
         name: 'BMW i8',
         year: 2014,
         heroImage:
-          'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/BMW_i8_%28I15%29_%E2%80%93_Frontansicht%2C_1._Juli_2012%2C_D%C3%BCsseldorf.jpg/1280px-BMW_i8_%28I15%29_%E2%80%93_Frontansicht%2C_1._Juli_2012%2C_D%C3%BCsseldorf.jpg',
+          'https://assets.bwbx.io/images/users/iqjWHBFdfxIU/im0anhH7hIzU/v0/1200x800.jpg',
         gallery: [
-          'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/BMW_i8_%28I15%29_%E2%80%93_Frontansicht%2C_1._Juli_2012%2C_D%C3%BCsseldorf.jpg/1280px-BMW_i8_%28I15%29_%E2%80%93_Frontansicht%2C_1._Juli_2012%2C_D%C3%BCsseldorf.jpg',
+          'https://assets.bwbx.io/images/users/iqjWHBFdfxIU/im0anhH7hIzU/v0/1200x800.jpg',
+          'https://www.mechanicsinmotion.fr/wp-content/uploads/2015/11/bmw-i8.jpg',
+          'https://www.carbodydesign.com/media/2013/09/02-BMW-i8-Interior-02.jpg',
         ],
         technical:
           'Plug-in hybrid with turbocharged 3-cylinder engine + electric motor, 362 hp combined, intelligent all-wheel drive.',
@@ -134,9 +142,11 @@ export const brands: Brand[] = [
         name: 'BMW M4 CSL',
         year: 2022,
         heroImage:
-          'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/BMW_M4_CSL_%28G82%29_%E2%80%93_Frontansicht%2C_1._Juli_2022%2C_D%C3%BCsseldorf.jpg/1280px-BMW_M4_CSL_%28G82%29_%E2%80%93_Frontansicht%2C_1._Juli_2022%2C_D%C3%BCsseldorf.jpg',
+          'https://images.caradisiac.com/logos/1/7/5/2/271752/S0-bmw-devoile-la-m4-csl-196240.jpg',
         gallery: [
-          'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/BMW_M4_CSL_%28G82%29_%E2%80%93_Frontansicht%2C_1._Juli_2022%2C_D%C3%BCsseldorf.jpg/1280px-BMW_M4_CSL_%28G82%29_%E2%80%93_Frontansicht%2C_1._Juli_2022%2C_D%C3%BCsseldorf.jpg',
+          'https://images.caradisiac.com/logos/1/7/5/2/271752/S0-bmw-devoile-la-m4-csl-196240.jpg',
+          'https://ai.dimaster.io/assets/cache/1920/x/media/Artikel/220520%20BMW%20M4%20CSL/2022%20BMW%20M4%20CSL%2014.jpg',
+          'https://cdn-s-www.vosgesmatin.fr/images/68C8240C-3D0A-425C-8BAC-57FE6194CBB9/NW_raw/deux-rangements-pour-casque-a-l-arriere-console-centrale-entierement-en-cfrp-garniture-de-toit-de-couleur-anthracite-volant-en-alcantara-m-baguettes-de-garniture-interieure-en-fibre-de-carbone-badge-quot-csl-quot-sur-les-sieges-la-console-centrale-et-le-panneau-arriere-affichages-et-contre-elements-specifiques-m-1653033566.jpg',
         ],
         technical:
           '3.0L twin-turbo inline-six S58, 550 hp, 8-speed M Steptronic transmission, rear-wheel drive, lightweight construction.',
