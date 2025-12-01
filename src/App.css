@@ -656,11 +656,6 @@
   color: #7ec8e3;
 }
 
-.blog-filters {
-  display: flex;
-  gap: 0.8rem;
-  flex-wrap: wrap;
-}
 
 .article-shell {
   max-width: 760px;
