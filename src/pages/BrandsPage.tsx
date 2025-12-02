@@ -83,7 +83,10 @@ export function BrandsPage() {
         {filteredBrands.map((brand) => (
           <article key={brand.id} className="brand-card">
             <p className="brand-country">{brand.country}</p>
-            <h3>{brand.name}</h3>
+            <div className="brand-header">
+              <img src={brand.logo} alt={`${brand.name} logo`} className="brand-logo" />
+              <h3>{brand.name}</h3>
+            </div>
             <p>{brand.description}</p>
             <span className="brand-region">{brand.regionLabel}</span>
             <Link to={`/brands/${brand.id}`} className="ghost-button">

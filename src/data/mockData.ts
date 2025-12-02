@@ -32,7 +32,7 @@ export const brands: Brand[] = [
     country: 'Germany',
     regionLabel: 'Munich, Germany',
     location: { lat: 48.1351, lng: 11.582 },
-    logo: 'https://logo.clearbit.com/bmw.com',
+    logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/BMW.svg/200px-BMW.svg.png',
     description: 'Precision engineering and sporty luxury from Bavaria.',
     timelineStart: 1960,
     timelineEnd: 2025,
