@@ -1,13 +1,19 @@
 import { useState, useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Navigate } from 'react-router-dom'
 import { Card } from '../components/Card'
 import { collectionsStore } from '../utils/collectionsStore'
+import { authStore } from '../utils/authStore'
 
 export function CollectionsPage() {
   const [collections, setCollections] = useState(collectionsStore.getAll())
   const [isCreating, setIsCreating] = useState(false)
   const [newCollectionName, setNewCollectionName] = useState('')
   const navigate = useNavigate()
+
+  // Rediriger vers login si non connecté
+  if (!authStore.isAuthenticated()) {
+    return <Navigate to="/login" replace />
+  }
 
   useEffect(() => {
     const handleUpdate = () => {
