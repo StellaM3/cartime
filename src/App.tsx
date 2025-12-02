@@ -10,6 +10,7 @@ import { BlogArticlePage } from './pages/BlogArticlePage'
 import { ProfilePage } from './pages/ProfilePage'
 import { AuthPage } from './pages/AuthPage'
 import { BrandsPage } from './pages/BrandsPage'
+import { MapPage } from './pages/MapPage'
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <main className="page-wrapper">
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/map" element={<MapPage />} />
           <Route path="/brands" element={<BrandsPage />} />
           <Route path="/brands/:brandId" element={<BrandTimelinePage />} />
           <Route path="/brands/:brandId/models/:modelId" element={<ModelDetailPage />} />
