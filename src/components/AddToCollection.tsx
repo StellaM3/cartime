@@ -4,11 +4,7 @@ import { collectionsStore } from '../utils/collectionsStore'
 import { authStore } from '../utils/authStore'
 import { getBrandById, getModelById } from '../data/mockData'
 
-type AddToCollectionProps = {
-  modelName?: string
-}
-
-export function AddToCollection({ modelName }: AddToCollectionProps) {
+export function AddToCollection() {
   const { brandId, modelId } = useParams()
   const navigate = useNavigate()
   const [isOpen, setIsOpen] = useState(false)
