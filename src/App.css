@@ -1211,6 +1211,55 @@
   padding: 0 1.25rem 1.25rem;
 }
 
+/* Auth page styles */
+.auth-error {
+  background: rgba(255, 107, 107, 0.1);
+  border: 1px solid rgba(255, 107, 107, 0.3);
+  color: #ff6b6b;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.auth-hint {
+  background: rgba(126, 200, 227, 0.1);
+  border: 1px solid rgba(126, 200, 227, 0.3);
+  color: #7ec8e3;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.auth-hint strong {
+  color: #ffffff;
+  font-family: 'Courier New', monospace;
+  background: rgba(126, 200, 227, 0.1);
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.25rem;
+}
+
+.profile-actions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.danger-action {
+  color: #ff6b6b !important;
+  border-color: rgba(255, 107, 107, 0.3) !important;
+  text-align: left;
+  justify-content: flex-start;
+}
+
+.danger-action:hover {
+  background: rgba(255, 107, 107, 0.1) !important;
+  border-color: rgba(255, 107, 107, 0.5) !important;
+}
+
 .lock-badge {
   font-size: 0.85rem;
   color: #8b9097;

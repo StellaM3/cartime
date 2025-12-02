@@ -8,7 +8,21 @@ const navItems = [
   { path: '/profile', label: 'Profile' },
 ]
 
+import { useState, useEffect } from 'react'
+import { authStore } from '../utils/authStore'
+
 export function NavBar() {
+  const [isAuthenticated, setIsAuthenticated] = useState(authStore.isAuthenticated())
+
+  useEffect(() => {
+    const handleAuthChange = () => {
+      setIsAuthenticated(authStore.isAuthenticated())
+    }
+
+    window.addEventListener('auth-changed', handleAuthChange)
+    return () => window.removeEventListener('auth-changed', handleAuthChange)
+  }, [])
+
   return (
     <header className="nav-shell">
       <div className="nav-logo">
@@ -53,12 +67,20 @@ export function NavBar() {
         ))}
       </nav>
       <div className="nav-actions">
-        <Link to="/login" className="secondary-button">
-          Login
-        </Link>
-        <Link to="/signup" className="primary-button">
-          Sign up
-        </Link>
+        {isAuthenticated ? (
+          <Link to="/profile" className="primary-button">
+            Profile
+          </Link>
+        ) : (
+          <>
+            <Link to="/login" className="secondary-button">
+              Login
+            </Link>
+            <Link to="/signup" className="primary-button">
+              Sign up
+            </Link>
+          </>
+        )}
       </div>
     </header>
   )
