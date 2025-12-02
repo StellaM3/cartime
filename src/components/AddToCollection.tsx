@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import { collectionsStore } from '../utils/collectionsStore'
+import { authStore } from '../utils/authStore'
 import { getBrandById, getModelById } from '../data/mockData'
 
 type AddToCollectionProps = {
@@ -9,15 +10,42 @@ type AddToCollectionProps = {
 
 export function AddToCollection({ modelName }: AddToCollectionProps) {
   const { brandId, modelId } = useParams()
+  const navigate = useNavigate()
   const [isOpen, setIsOpen] = useState(false)
+  const [showAuthPrompt, setShowAuthPrompt] = useState(false)
   const [isCreatingNew, setIsCreatingNew] = useState(false)
   const [newCollectionName, setNewCollectionName] = useState('')
   const [collections, setCollections] = useState(collectionsStore.getAll())
   const [successMessage, setSuccessMessage] = useState('')
+  const [pendingAddToCollection, setPendingAddToCollection] = useState(false)
 
   useEffect(() => {
     setCollections(collectionsStore.getAll())
   }, [isOpen])
+
+  useEffect(() => {
+    // Si l'utilisateur vient de se connecter et qu'il voulait ajouter à une collection
+    const handleAuthChange = () => {
+      if (authStore.isAuthenticated() && pendingAddToCollection) {
+        setPendingAddToCollection(false)
+        setShowAuthPrompt(false)
+        setIsOpen(true)
+      }
+    }
+
+    window.addEventListener('auth-changed', handleAuthChange)
+    return () => window.removeEventListener('auth-changed', handleAuthChange)
+  }, [pendingAddToCollection])
+
+  const handleOpenCollection = () => {
+    // Vérifier si l'utilisateur est connecté
+    if (!authStore.isAuthenticated()) {
+      setShowAuthPrompt(true)
+      setPendingAddToCollection(true)
+    } else {
+      setIsOpen(true)
+    }
+  }
 
   const handleAddToCollection = (collectionId: string, collectionName: string) => {
     if (!brandId || !modelId) return
@@ -77,12 +105,52 @@ export function AddToCollection({ modelName }: AddToCollectionProps) {
 
   return (
     <>
-      <button type="button" className="add-collection" onClick={() => setIsOpen(true)}>
+      <button type="button" className="add-collection" onClick={handleOpenCollection}>
         <span className="add-icon" aria-hidden="true">
           +
         </span>
         Add to collection
       </button>
+
+      {showAuthPrompt && (
+        <div className="modal-overlay" onClick={() => setShowAuthPrompt(false)}>
+          <div className="modal-content auth-prompt-modal" onClick={(e) => e.stopPropagation()}>
+            <div className="modal-header">
+              <h2>Sign in required</h2>
+              <button className="modal-close" onClick={() => setShowAuthPrompt(false)}>
+                ×
+              </button>
+            </div>
+
+            <div className="modal-body">
+              <p className="auth-prompt-message">
+                You need to be signed in to add models to your collections.
+              </p>
+
+              <div className="auth-prompt-actions">
+                <button
+                  className="primary-button full-width"
+                  onClick={() => {
+                    setShowAuthPrompt(false)
+                    navigate('/login')
+                  }}
+                >
+                  Log in
+                </button>
+                <button
+                  className="secondary-button full-width"
+                  onClick={() => {
+                    setShowAuthPrompt(false)
+                    navigate('/signup')
+                  }}
+                >
+                  Create an account
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
 
       {isOpen && (
         <div className="modal-overlay" onClick={() => setIsOpen(false)}>
